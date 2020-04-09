@@ -99,10 +99,10 @@ data a + b = InL a | InR b
 infixr 8 +
 
 example2 :: Int + String + Bool
-example2 = InR InR True
+example2 = InR (InR True)
 ```
 
-We use the ``infixr`` keyword to specify that our operator is right associative. This makes it so we can omit unnecessary parentheses and further increase our code readability.
+We use the ``infixr`` keyword to specify that our operator is right associative. This makes it so we can omit unnecessary parentheses in our types and further increase our code readability.
 
 Now that we have this new data type we can use it to replace our previous ``Topics`` data type.
 
