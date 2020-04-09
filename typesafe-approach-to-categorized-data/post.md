@@ -32,7 +32,7 @@ It's clear that this representation leaves a lot to be desired. If you're like m
 The initial way I went about doing this was simple. First, we'll create types representing the questions.
 
 ```haskell
---      Topic          _____ Questions _____
+--      topic          _____ questions _____
 --        ↓           ↓                    ↓
 data Environment = ParisAgreement | GreenNewDeal
 
