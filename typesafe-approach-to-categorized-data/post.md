@@ -25,9 +25,9 @@ friedman = [(freeLunch, 1.0)]
 
 ```
 
-Not long after I implemented this approach, a major design flaw became visible. There was nothing making sure the questions were actually a part of the correct topics, or if the topic they are apart of even exists! Since topics are represented as text, you could put whatever you want there and the compiler wouldn't know the difference. Typos or other little mistakes could lead to some very annoying bugs.
+Not long after I implemented this approach, a major design flaw became visible. There was nothing making sure the questions were actually assigned to the correct topics, or if the topic they were assigned to even exists! Since topics are represented as text, you could set the topic to whatever you want and the compiler wouldn't know the difference. Typos or other little mistakes could lead to some very annoying bugs.
 
-So it's clear that this representation leaves a lot to be desired. If you're like me and you enjoy getting the compiler to do your work for you, you're probably thinking that we need some way of letting the compiler know about all valid questions and a way of assigning those questions to topics. That way the compiler could check our code for us and we'd be sure we didn't make any careless errors.
+It's clear that this representation leaves a lot to be desired. If you're like me and you enjoy getting the compiler to do your work for you, you're probably thinking that we need some way of letting the compiler know about all valid questions and a way of assigning those questions to topics. That way the compiler could check our code for us and we'd be sure we didn't make any careless errors.
 
 The initial way I went about doing this was simple. First, we'll create types representing the questions.
 
@@ -78,13 +78,13 @@ Now we can change our representation of candidates to reflect our newly created 
 type Candidate = [(Topics, Opinion)]
 ```
 
-This seemed like a pretty good solution at the time. Candidates couldn't have opinions about questions that didn't exist and I could still leverage the power of record types to store information. But as I started to extend the quiz with more questions, topics, and functions that relied on those questions and their grouping, a growing amount of the program would need to change to include cases for those new data types. This situation is referred to as the Expression Problem, a name given to it by Philip Wadler.
+This seemed like a pretty good solution at the time. Questions were well defined and I could still leverage the power of record types to store information. But as I started to extend the quiz with more questions, topics, and functions that relied on those topic, a growing amount of the program would need to change to include cases for the new data types. This situation is referred to as the Expression Problem, a name given to it by Philip Wadler.
 
-The Expression Problem basically states that programs are made up of data types and functions that act on those data types. As a program grows, the number of functions that rely on the structure of data types also grows. Because of this, changing the underlying data structure of the program becomes exponentially more difficult.
+The Expression Problem basically states that programs are made up of data types and functions that act on those data types. As a program grows, the number of functions that rely on the structure of those data types also grows. Because of this, extending the program or adding more functionality becomes exponentially more difficult.
 
 A commonly cited solution to the Expression Problem is a paper written by Wouter Swierstra titled [Data Types á la Carte.](http://www.cs.ru.nl/~W.Swierstra/Publications/DataTypesALaCarte.pdf) The paper is specifically about the Expression Problem as it relates to programming language interpreters but a simplified version of its solution fits our problem quite nicely.
 
-First, we'll create a simple data type which is basically the same as the standard ``Either`` type. We use an extension called TypeOperators so that our data type can use a `(+)` symbol that will make our types easier to read than if we used ``Either``.
+First, we'll create a simple data type which is basically the same as the standard ``Either`` type. We use an extension called TypeOperators so that our type constructor can be represented as a `(+)` symbol that will make our types easier to read than if we used ``Either``.
 
 ```haskell
 -- Standard Either type
@@ -128,10 +128,8 @@ getQuestion (InR (InR PublicHealthInsurance)) =
   Question "The U.S. should have some form of public health insurance" "Healthcare"
 ```
 
-This doesn't seem to fix our problem though. The nested data constructors
-also get unwieldy very quickly. To get around this problem, let's instead
-define an ad hoc typeclass that encapsulates the idea of converting
-a topic into a question.
+This doesn't seem to fix our problem though. We still have one big function that we need to go back and update if we add more topics. Along with this, the nested data constructors get unwieldy very quickly. To get around this problem, let's instead
+define an ad hoc typeclass that encapsulates the idea of converting a topic into a question.
 
 ```haskell
 class IsTopic a where
@@ -160,7 +158,9 @@ instance IsTopic Healthcare where
     Question "The U.S. should have some form of public health insurance" "Healthcare"
 ```
 
-And we can even make our new combining data type an instance too!
+This is the general way that we will add more functions in the future. Instead of creating monolithic functions that encapsulate all of our data types, we create type classes for the functionality we want and make our data types instances of that type class.
+
+We can even create an instance for our new sum data type!
 
 ```haskell
 instance (IsTopic a, IsTopic b) => IsTopic (a + b) where
@@ -187,7 +187,7 @@ questions :: [Question]
 questions = getQuestion <$> topics
 ```
 
-This is all great but there's still one last issue we've yet to address. Whenever we want something of type ``Topics``, we have to manually type out a long chain of ``InL``s and ``InR``s.
+This is great and all but there's still one last issue we've yet to address. Whenever we want something of type ``Topics``, we have to manually type out a long chain of ``InL``s and ``InR``s.
 
 In the actual application there are 15 topics so you can imagine how annoying it would be to work with ``InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR EqualityAct)))))))))))))``.
 
