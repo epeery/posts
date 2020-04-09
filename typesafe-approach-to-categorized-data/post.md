@@ -32,17 +32,13 @@ It's clear that this representation leaves a lot to be desired. If you're like m
 The initial way I went about doing this was simple. First, we'll create types representing the questions.
 
 ```haskell
-data Environment
-  = ParisAgreement
-  | GreenNewDeal
+--      Topic          _____ Questions _____
+--        ↓           ↓                    ↓
+data Environment = ParisAgreement | GreenNewDeal
 
-data Economics
-  = EstateTax
-  | SupportNAFTA
+data Economics = EstateTax | SupportNAFTA
 
-data Healthcare
-  = SinglePayerSystem
-  | PublicHealthInsurance
+data Healthcare = SinglePayerSystem | PublicHealthInsurance
 ```
 
 Then we'll create a data type that we'll use to combine the questions. The reason we need is because ``List`` in Haskell can only contain items of the same type. Without using ``Topics`` as a wrapper, there's no easy way to store and present questions as a group.
