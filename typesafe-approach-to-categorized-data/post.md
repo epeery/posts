@@ -54,18 +54,12 @@ Lastly, we'll create a function called ``getQuestion`` which we'll use to conver
 
 ```haskell
 getQuestion :: Topics -> Question
-getQuestion (TEnvironment ParisAgreement) =
-  Question "The U.S. should rejoin the Paris Climate Agreement" "Environment"
-getQuestion (TEnvironment GreenNewDeal) =
-  Question "The Green New Deal is a good idea" "Environment"
-getQuestion (TEconomics EstateTax) =
-  Question "I am in favor of a national estate tax" "Economics"
-getQuestion (TEconomics SupportNAFTA) =
-  Question "The US should support NAFTA" "Economics"
-getQuestion (THealthcare SinglePayerSystem) =
-  Question "The U.S. should have a single-payer healthcare system" "Healthcare"
-getQuestion (THealthcare PublicHealthInsurance) =
-  Question "The U.S. should have some form of public health insurance" "Healthcare"
+getQuestion (TEnvironment ParisAgreement) = Question "The U.S. should rejoin the Paris Climate Agreement" "Environment"
+getQuestion (TEnvironment GreenNewDeal) = Question "The Green New Deal is a good idea" "Environment"
+getQuestion (TEconomics EstateTax) = Question "I am in favor of a national estate tax" "Economics"
+getQuestion (TEconomics SupportNAFTA) = Question "The US should support NAFTA" "Economics"
+getQuestion (THealthcare SinglePayerSystem) = Question "The U.S. should have a single-payer healthcare system" "Healthcare"
+getQuestion (THealthcare PublicHealthInsurance) = Question "The U.S. should have some form of public health insurance" "Healthcare"
 ```
 
 Now we can change our representation of candidates to reflect our newly created types.
@@ -185,7 +179,7 @@ questions = getQuestion <$> topics
 
 This is great and all but there's still one last issue we've yet to address. Whenever we want something of type ``Topics``, we have to manually type out a long chain of ``InL``s and ``InR``s.
 
-In the actual application there are 15 topics so you can imagine how annoying it would be to work with ``InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR EqualityAct)))))))))))))``.
+In the actual application there are 15 topics so you can imagine how annoying it would be to work with ``InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR EqualityAct)))))))))))))``
 
 To get around this the paper makes use of a clever typeclass.
 
@@ -230,9 +224,10 @@ In the next post we'll talk about ways we can use type-level programming to quer
 
 ### Notes
 
-1 - Got ideas on how this could be better implemented?  Things that I missed? If you have any suggestions for how I can do to improve this post please let me know.
 
-2 - In order for the code to in this post to compile, you'll need to enable these language extensions.
+1. Got ideas on how this could be better implemented?  Things that I missed? If you have any suggestions for how I can improve this post [please let me know.](mailto:sandy@sandymaguire.me)
+
+2. In order for the code to in this post to compile, you'll need to enable these language extensions:
 
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}
@@ -241,4 +236,4 @@ In the next post we'll talk about ways we can use type-level programming to quer
 {-# LANGUAGE FlexibleInstances #-}
 ```
 
-3 - The actual implementation I ended up using is a bit more involved than that described here. For more information, I'll refer you to this wonderful blog post by Sandy Maguire: [Better Data Type á la Carte. ](https://reasonablypolymorphic.com/blog/better-data-types-a-la-carte/)
+3. The actual implementation I ended up using is a bit more involved than that described here. For more information, I'll refer you to this wonderful blog post by Sandy Maguire: [Better Data Type á la Carte.](https://reasonablypolymorphic.com/blog/better-data-types-a-la-carte/)
