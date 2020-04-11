@@ -173,7 +173,11 @@ questions = getQuestion <$> topics
 
 This is great and all but there's still one last issue we've yet to address. Whenever we want something of type ``Topics``, we have to manually type out a long chain of ``InL``s and ``InR``s.
 
-In the actual application there are 15 topics so you can imagine how annoying it would be to work with ``InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR EqualityAct)))))))))))))``
+In the actual application there are 15 topics so you can imagine how annoying it would be to work with
+
+```haskell
+InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR (InR EqualityAct)))))))))))))
+```
 
 To get around this the paper makes use of a clever typeclass.
 
