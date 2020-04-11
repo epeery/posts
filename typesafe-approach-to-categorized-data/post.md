@@ -144,7 +144,7 @@ instance IsTopic Healthcare where
 
 This is the general way that we will add more functions in the future. Instead of creating monolithic functions that encapsulate all of our data types, we create type classes for the functionality we want and make our data types instances of that type class.
 
-We can even create an instance for our new sum data type!
+We can even create an instance for our new sum type!
 
 ```haskell
 instance (IsTopic a, IsTopic b) => IsTopic (a + b) where
