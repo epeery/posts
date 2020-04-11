@@ -104,18 +104,12 @@ And we can redefine our functions to work on our new version of ``Topics``.
 
 ```haskell
 getQuestion :: Topics -> Question
-getQuestion (InL ParisAgreement) =
-  Question "The U.S. should rejoin the Paris Climate Agreement" "Environment"
-getQuestion (InL GreenNewDeal) =
-  Question "The Green New Deal is a good idea" "Environment"
-getQuestion (InR (InL EstateTax)) =
-  Question "I am in favor of a national estate tax" "Economics"
-getQuestion (InR (InL SupportNAFTA)) =
-  Question "The US should support NAFTA" "Economics"
-getQuestion (InR (InR SinglePayerSystem)) =
-  Question "The U.S. should have a single-payer healthcare system" "Healthcare"
-getQuestion (InR (InR PublicHealthInsurance)) =
-  Question "The U.S. should have some form of public health insurance" "Healthcare"
+getQuestion (InL ParisAgreement) = Question "The U.S. should rejoin the Paris Climate Agreement" "Environment"
+getQuestion (InL GreenNewDeal) = Question "The Green New Deal is a good idea" "Environment"
+getQuestion (InR (InL EstateTax)) = Question "I am in favor of a national estate tax" "Economics"
+getQuestion (InR (InL SupportNAFTA)) = Question "The US should support NAFTA" "Economics"
+getQuestion (InR (InR SinglePayerSystem)) = Question "The U.S. should have a single-payer healthcare system" "Healthcare"
+getQuestion (InR (InR PublicHealthInsurance)) = Question "The U.S. should have some form of public health insurance" "Healthcare"
 ```
 
 This doesn't seem to fix our problem though. We still have one big function that we need to go back and update if we add more topics. Along with this, the nested data constructors get unwieldy very quickly. To get around this problem, let's instead
@@ -199,7 +193,7 @@ instance {-# OVERLAPPABLE #-} (a :<: c) => a :<: (b + c) where
 
 This typeclass does a couple things. Its type tells us that ``a`` is contained within ``b``, and the function ``inj`` allows for automatic injection into our custom sum type.
 
-For our pragmatic purposes of being able to use this approach in programs we write, it’s not critical that you’re able to instantly grok how this works. (It took me a while before I understood exactly why it was able to do what it does.) What is most important is that you understand that we can replace our ``InL``s and ``InR``s from before with our new inj function and it will automate away the busywork.
+For our pragmatic purposes of being able to use this approach in programs we write, it’s not critical that you’re able to instantly grok how this works. (It took me a while before I understood exactly why it was able to do what it does.) What is most important is that you understand that we can replace our ``InL``s and ``InR``s from before with our new ``inj`` function and it will automate away the busywork.
 
 This lets us remove all the excess boilerplate from before and instead define a list of ``Topics`` like this.
 
