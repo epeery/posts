@@ -241,7 +241,7 @@ In the next post we'll talk about ways we can use type-level programming to quer
 ### Notes
 
 
-1. Got ideas on how this could be better implemented?  Things that I missed? If you have any suggestions for how I can improve this post [please let me know.](mailto:sandy@sandymaguire.me)
+1. Got ideas on how this could be better implemented?  Things that I missed? If you have any suggestions for how I can improve this post [please let me know.](mailto:eli.g.peery@gmail.com)
 
 2. In order for the code to in this post to compile, you'll need to enable these language extensions:
 
