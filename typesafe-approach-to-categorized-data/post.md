@@ -231,11 +231,6 @@ topics =
 
 Now it doesn't matter how deeply nested our topics are. We just use the ``inj`` function and it takes care of everything for us. Much nicer.
 
-## Next steps
-
-In the next post we'll talk about ways we can use type-level programming to query this data type. We'll go over things like filtering by category, retrieving all questions of a category, and parsing strings we get from our API into concrete values.
-
-
 ----
 
 ### Notes
