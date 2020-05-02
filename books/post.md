@@ -9,3 +9,5 @@
 *Child of God* is the story of Lester Ballard, a violent man betrayed by society.
 
 ## Fear and Loathing in Las Vegas by Hunter S. Thompson
+
+## How to Win Friends and Influence people by Dale Carnegie
