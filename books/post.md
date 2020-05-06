@@ -11,3 +11,5 @@
 ## Fear and Loathing in Las Vegas by Hunter S. Thompson
 
 ## How to Win Friends and Influence people by Dale Carnegie
+
+## L'Étranger by Albert Camus
