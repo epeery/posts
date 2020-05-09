@@ -13,3 +13,11 @@
 ## How to Win Friends and Influence people by Dale Carnegie
 
 ## L'Étranger by Albert Camus
+
+I love this book more than almost any other I've read. The narrative style and subtle humor throughout the first half turns otherwise mundane and unremarkable everyday events into thoroughly enjoyable and highly memorable vignettes. The short, punchy sentences have an intensity that catapults the story forwards. The tone then shifts to one that is darker and more bizarre in second half of the book. The consequences of the narrator's actions become apparent and a new significance is given to interactions that previously seemed trivial.
+
+As well as having a wonderful story, the personal philosophy of the narrator forces the reader to grapple with immense questions relating to the nature of human suffering and the value of personal choice.
+
+If you end up reading this book, (which you absolutely should), I'd encourage you to also learn a little about the history of its author Albert Camus. I've found that the personal lives of authors often ends up reflecting their work. Albert Camus is no exception. Having dedicated much of his life to the idea of the absurd, the undeniable absurdity of his sudden death feels almost poetic.
+
+I'd recommend this book to anyone who appreciates the humorous and absurd nature of life.
