@@ -21,3 +21,5 @@ As well as having a wonderful story, the personal philosophy of the narrator for
 If you end up reading this book, (which you absolutely should), I'd encourage you to also learn a little about the history of its author Albert Camus. I've found that the personal lives of authors often ends up reflecting their work. Albert Camus is no exception. Having dedicated much of his life to the idea of the absurd, the undeniable absurdity of his sudden death feels almost poetic.
 
 I'd recommend this book to anyone who appreciates the humorous and absurd nature of life.
+
+## La Peste by Albert Camus
