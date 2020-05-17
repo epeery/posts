@@ -8,13 +8,13 @@
 
 *Child of God* is the story of Lester Ballard, a violent man betrayed by society.
 
-## Fear and Loathing in Las Vegas by Hunter S. Thompson
+## Fear and Loathing in Las Vegas by Hunter S. Thompson (1971)
 
-## How to Win Friends and Influence people by Dale Carnegie
+## How to Win Friends and Influence People by Dale Carnegie (1936)
 
-## L'Étranger by Albert Camus
+## L'Étranger by Albert Camus (1942)
 
-I love this book more than almost any other I've read. The narrative style and subtle humor throughout the first half turns otherwise mundane and unremarkable everyday events into thoroughly enjoyable and highly memorable vignettes. The short, punchy sentences have an intensity that catapults the story forwards. The tone then shifts to one that is darker and more bizarre in second half of the book. The consequences of the narrator's actions become apparent and a new significance is given to interactions that previously seemed trivial.
+This book is great. The narrative style and subtle humor throughout the first half turns otherwise mundane and unremarkable everyday events into thoroughly enjoyable and highly memorable vignettes. The short, punchy sentences have an intensity that catapults the story forwards. The tone then shifts to one that is darker and more bizarre in second half of the book. The consequences of the narrator's actions become apparent and a new significance is given to interactions that previously seemed trivial.
 
 As well as having a wonderful story, the personal philosophy of the narrator forces the reader to grapple with immense questions relating to the nature of human suffering and the value of personal choice.
 
@@ -22,4 +22,6 @@ If you end up reading this book, (which you absolutely should), I'd encourage yo
 
 I'd recommend this book to anyone who appreciates the humorous and absurd nature of life.
 
-## La Peste by Albert Camus
+## La Peste by Albert Camus (1947)
+
+## Fight Club by Chuck Palahniuk (1996)
