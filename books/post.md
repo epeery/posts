@@ -6,8 +6,6 @@
 
 ## Child of God by Cormac McCarthy
 
-*Child of God* is the story of Lester Ballard, a violent man betrayed by society.
-
 ## Fear and Loathing in Las Vegas by Hunter S. Thompson (1971)
 
 ## How to Win Friends and Influence People by Dale Carnegie (1936)
