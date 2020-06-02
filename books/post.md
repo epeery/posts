@@ -23,3 +23,5 @@ I'd recommend this book to anyone who appreciates the humorous and absurd nature
 ## La Peste by Albert Camus (1947)
 
 ## Fight Club by Chuck Palahniuk (1996)
+
+## Stoner by John Edward Williams (1965)
